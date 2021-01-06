@@ -1,4 +1,9 @@
 let handler  = async (m, { conn, usedPrefix: _p }) => {
+    let preview = {}
+  try {
+    if (!conn.menu) preview = await conn.generateLinkPreview('https://github.com/jesxsky/bot')
+  } catch (e) {}
+  } finally {
     let exp = global.DATABASE.data.users[m.sender].exp
     let name = conn.getName(m.sender)
     let d = new Date
