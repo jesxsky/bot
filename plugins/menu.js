@@ -1,12 +1,4 @@
 let handler  = async (m, { conn, usedPrefix: _p }) => {
-  let preview = {}
-  try {
-    if (!conn.menu) preview = await conn.generateLinkPreview('https://github.com/Arya274/Arya-Bot')
-  } catch (e) {
-    try {
-      if (!conn.menu) preview = await global.conn.generateLinkPreview('https://github.com/Nurutomo/wabot-aq')
-    } catch (e) {}
-  } finally {
     let exp = global.DATABASE.data.users[m.sender].exp
     let name = conn.getName(m.sender)
     let d = new Date
@@ -32,8 +24,8 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
       .replace(/%week/g, week)
       .replace(/%date/g, date)
       .replace(/%time/g, time): `
-🤖 [NFQ BOT] 🤖
-Created Bye: @Drawl Nag
+🤖 [UTMs BOT] 🤖
+Created Bye: @DENI
 
 Hi, ${name} 👋
 Exp: ${exp}
@@ -92,18 +84,16 @@ Cara Tambah XP:
 ╠➥ ${_p}mutechat group
 ║
 ╠═〘 IKLAN 〙 ═
-╠➥ Instagram: @arpunchs
-╠➥ Github: https://github.com/Arya274/Arya-Bot
+╠➥ Instagram: KEPO BGST
 ║
 ╠═〘 Info Bot 〙 ═
-╠➥ Name : NFQ BOT
-╠➥ Coded using *Nano* on Android \\w Termux
-╠➥ Request? Wa.me/6288235435804
+╠➥ Name : UTMs BOT
+╠➥ Request? Wa.me/6282144323683
 ╠═════
 ║ Advanced:
 ║  > return m
 ║
-╠═〘 NfQ BOT 〙═
+╠═〘 UTMs BOT 〙═
 `.trim()
     conn.reply(m.chat, {...preview, text}, m)
   }
